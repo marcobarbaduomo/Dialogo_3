@@ -9,7 +9,7 @@ public class InteractFile {
     private String stringPause;
     private int lines;
     
-    InteractFile() throws IOException{
+    InteractFile(String fileName) throws IOException{
         try {
             reader= new BufferedReader( new FileReader("file.txt"));
             lines= linesCont();
