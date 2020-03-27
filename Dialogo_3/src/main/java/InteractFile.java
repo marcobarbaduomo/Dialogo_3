@@ -69,4 +69,8 @@ public class InteractFile {
             System.out.println("Error while reading file");
         }
     }
+    
+    public int getLinesCont(){
+        return lines;
+    }
 }
