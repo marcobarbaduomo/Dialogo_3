@@ -5,10 +5,12 @@ import java.util.logging.Logger;
 public class Actor implements Runnable{
     private String actorName;
     private InteractFile file;
+    private int linesCont;
     
     public Actor(String actorName, InteractFile file ){
         this.actorName= actorName;
         this.file= file;
+        linesCont= file.getLinesCont()/2;
     }
 
     @Override
@@ -17,8 +19,10 @@ public class Actor implements Runnable{
             for(int i = 0; i < file.getLinesCont(); i++) {
                 if(file.getActor().equals(actorName)){
                     System.out.println( actorName +": "+file.getDialogue());
+                    int pause= file.getPause()/2;
+                    Thread.sleep(pause);
                     file.continueReading();
-                    Thread.sleep(file.getPause());
+                    Thread.sleep(pause);
                 }else{
                     Thread.sleep(file.getPause());
                 }

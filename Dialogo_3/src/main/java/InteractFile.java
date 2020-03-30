@@ -36,8 +36,8 @@ public class InteractFile {
             System.out.println("line cont in null pointer: " +i);
             return i;
         }
-        System.out.println("line contout catch: " +i);
-        return i;
+        //System.out.println("line contout catch: " +i);
+        return i-1;
     }
     
     public String getDialogue(){ //restituisce la string di dialogo 
@@ -45,9 +45,9 @@ public class InteractFile {
     }
     
     public String getActor(){ //restituisce actor1 o actor2 in base al dialogo
-        if(stringDialogue.substring(2).equals("t1")){
+        if(stringDialogue.substring(0,2).equals("t1")){
             return "actor1";
-        } else if(stringDialogue.substring(2).equals("t2")){
+        } else if(stringDialogue.substring(0,2).equals("t2")){
             return "actor2";
         } return "ciaone";
     }
